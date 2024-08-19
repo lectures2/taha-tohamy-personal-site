@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f5f7; /* Match the homepage background color */
+            color: #333; /* Match the homepage text color */
+            padding: 0;
+            margin: 0;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #ffffff; /* Match the homepage content background */
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Match the homepage box shadow */
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .certifications {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeInUp 1.5s ease-in-out forwards; /* Match the homepage animation */
+        }
+
+        .certification-item {
+            flex: 1 1 calc(33.333% - 60px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #ffffff; /* Match the homepage item background */
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Match the homepage item box shadow */
+            text-align: center;
+            transform: scale(0.9);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
+        }
+
+        .certification-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            object-fit: contain;
+        }
+
+        .certification-item h3 {
+            font-size: 1.5em;
+            color: #e74c3c; /* Match the homepage header color */
+            margin: 10px 0;
+        }
+
+        .certification-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Match the homepage hover effect */
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .certification-item {
+                flex: 1 1 100%;
+            }
+        }
+
+        /* Go back button */
+        .go-back-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #e74c3c; /* Match the button color from the homepage */
+            color: #ffffff; /* White text on the button */
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Match the homepage box shadow */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .go-back-btn:hover {
+            background-color: #000000; /* Match the hover effect from the homepage */
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation - Zoom in the Modal */
+        .modal-content, #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="cool-section"><u class="green-underline"><b>Certifications</b></u></h1>
+        <div class="certifications">
+            <div class="certification-item">
+                <img src="ce1.png" alt="Basic Food Safety Course">
+                <h3>Basic Food Safety Course</h3>
+            </div>
+            <div class="certification-item">
+                <img src="ce2.png" alt="Person in Charge (PIC) : Level 3">
+                <h3>Person in Charge (PIC) : Level 3</h3>
+            </div>
+            <div class="certification-item">
+                <img src="ce3.png" alt="Certified Restaurant Manager">
+                <h3>Certified Restaurant Manager</h3>
+            </div>
+            <div class="certification-item">
+                <img src="ce4.png" alt="EL Chico M.I.T Training Program">
+                <h3>EL Chico M.I.T Training Program</h3>
+            </div>
+            <div class="certification-item">
+                <img src="ce5.png" alt="Top Gun Training">
+                <h3>Top Gun Training </h3>
+            </div>
+            <div class="certification-item">
+                <img src="ce6.png" alt="Tropica">
+                <h3>Chilis Certification</h3>
+            </div>
+            <div class="certification-item">
+                <img src="ce7.png" alt="TROPICANA">
+                <h3>Experience Certificate</h3>
+            </div>
+            <div class="certification-item">
+                <img src="ce8.png" alt="Trainer Certification at Chilis">
+                <h3>Certificate Of Accomplishment</h3>
+            </div>
+<div class="certification-item">
+                <img src="ce9.png" alt="NOV 30th 1998">
+                <h3>Certification of New menu at Chilis</h3>
+            </div>
+
+<div class="certification-item">
+                <img src="ce10.png" alt="April 8, 1999">
+                <h3>Certification of Opening at Tropicana</h3>
+            </div>
+
+<div class="certification-item">
+                <img src="ce11.png" alt="Chilis">
+                <h3>Kitchen Manager At Tropicana </h3>
+            </div>
+
+<div class="certification-item">
+                <img src="ce12.png" alt="Food Safety">
+                <h3>Food Safety and sanitation</h3>
+            </div>
+
+<div class="certification-item">
+                <img src="ce13.png" alt="9/3/2004">
+                <h3>Diploma of the Commercial Technical Institutes</h3>
+            </div>
+
+<div class="certification-item">
+                <img src="ce14.png" alt="College of English Education and Managment Training">
+                <h3>Certification of CEMT course</h3>
+            </div>
+
+        </div>
+    </div>
+
+    <a href="index.html" class="go-back-btn">Go Back</a>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        var imgs = document.querySelectorAll('.certification-item img');
+        var modalImg = document.getElementById("img01");
+        var captionText = document.getElementById("caption");
+
+        imgs.forEach(function(img) {
+            img.onclick = function(){
+                modal.style.display = "block";
+                modalImg.src = this.src;
+                captionText.innerHTML = this.alt;
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taha Abdel Rahim Tohamy - Personal Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+<style>
+   body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f2f5f7;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.top-left-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 10px 15px;
+    background-color: #e74c3c;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.top-left-button:hover {
+    background-color: #e74c3c;
+    transform: scale(1.05);
+}
+
+header {
+    background: url('baba.jfif') no-repeat center center/cover;
+    color: #ffffff;
+    padding: 260px 0;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust this value for more or less darkness */
+    z-index: 1;
+}
+
+header h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    position: relative;
+    z-index: 2;
+}
+
+header .language-switch {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    z-index: 2;
+}
+
+
+header .language-switch button {
+
+    background-color: #e74c3c;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header .language-switch button:hover {
+
+    background-color: #002244;
+    transform: translateY(-3px);
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.whatsapp-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+ .email-button {
+        position: fixed;
+        bottom: 100px; /* Adjusted to be above the WhatsApp icon */
+        left: 20px;
+        width: 70px;
+        height: 70px;
+        background-color: #0072C6;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .email-button img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .email-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+.linkedin-button {
+    position: fixed;
+    bottom: 20px; /* Positioned above the email button */
+    left: 20px;
+    width: 70px;
+    height: 70px;
+    background-color: #0077b5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.linkedin-button img {
+    width: 40px;
+    height: 40px;
+}
+
+.linkedin-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.download-cv-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 30px;
+    background-color: #CD5C5C;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 3; /* Ensure it's above the overlay */
+}
+
+        .download-cv-button:hover {
+            background-color: #000000;
+            transform: scale(1.05);
+    
+
+        }
+
+.content {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #ffffff, #f7f9fc);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    animation: fadeIn 1.5s ease-out;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 3em;
+    color: #e74c3c;
+    border-bottom: 4px solid #003366;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    animation: slideInLeft 1s ease-out;
+}
+
+p, ul {
+    margin: 15px 0;
+    line-height: 1.8;
+    font-size: 1.2em;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 30px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.experience-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeInRight 1.5s ease-out;
+}
+
+.experience-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.experience-item img {
+    width: 220px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+footer {
+    background-color: #e74c3c;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    border-radius: 0 0 12px 12px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.cool-section {
+    margin-bottom: 50px;
+    padding: 40px;
+    border-radius: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.cool-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent);
+    animation: rotateGradient 10s infinite linear;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.cool-section:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.cool-section h2 {
+    font-size: 3.2em;
+    color: #ffe600;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 3px;
+}
+
+.interests-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.interest-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 1.5em;
+    color: #00e6e6;
+    padding: 15px 25px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.interest-item:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.interest-item i {
+    font-size: 2.5em;
+    color: #ffdd00;
+    transition: transform 0.4s ease;
+}
+
+.interest-item:hover i {
+    transform: rotate(15deg) scale(1.1);
+}
+
+#references p {
+    text-align: center;
+    font-size: 1.4em;
+    color: #00e6e6;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+#references p:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+@keyframes rotateGradient {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes flipInY {
+    from {
+        transform: perspective(400px) rotateY(90deg);
+        opacity: 0;
+    }
+    to {
+        transform: perspective(400px) rotateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        transform: translateX(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+</style>
+</head>
+<body>
+    <header>
+    <h1 id="name" data-en="Taha Abdel Rahim Tohamy" data-ar="طه عبدالرحيم تهامي">
+        Taha Abdel Rahim Tohamy
+    </h1>
+    <a href="updated 2024 Taha Tohamy CV-3.doc" class="download-cv-button" download>Download CV</a>
+    <div class="language-switch">
+        <button onclick="switchLanguage('en')">English</button>
+        <button onclick="switchLanguage('ar')">العربية</button>
+    </div>
+</header>
+
+<a href="certi.html" class="top-left-button">Certifications</a>
+<a href="https://wa.me/966506045846" class="whatsapp-button" target="_blank">
+    <img src="ws.png" alt="WhatsApp" />
+</a>
+<a href="mailto:tahasaif21000@yahoo.com" class="email-button">
+    <img src="https://img.icons8.com/fluency/48/000000/new-post.png" alt="Email">
+</a>
+
+<a href="https://www.linkedin.com/in/taha-tohamy-5b889324" class="linkedin-button" target="_blank">
+    <img src="li2.png" alt="LinkedIn">
+</a>
+
+    <div class="content">
+        <section id="objective">
+            <h2>Objective</h2>
+            <p data-en="Seeking a challenging position in a reputable chain where my skills and experience can be further enhanced to fulfill my ambition."
+               data-ar="البحث عن وظيفة تحدي في سلسلة محترمة حيث يمكن تعزيز مهاراتي وخبرتي لتحقيق طموحي."></p>
+        </section>
+
+        <section id="skills">
+            <h2>Summary of Skills</h2>
+            <ul>
+                <li data-en="Excellent Communication Skills" data-ar="مهارات اتصال ممتازة"></li>
+                <li data-en="Strong Leadership" data-ar="قيادة قوية"></li>
+                <li data-en="Planning" data-ar="التخطيط"></li>
+                <li data-en="Problem Solving" data-ar="حل المشاكل"></li>
+                <li data-en="Training & Human Resources Management" data-ar="التدريب وإدارة الموارد البشرية"></li>
+                <li data-en="Excellent Computer Skills" data-ar="مهارات حاسوبية ممتازة"></li>
+            </ul>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <p data-en="Manial El Roda commercial Institute in Cairo (1985 – 1987)" 
+               data-ar="معهد منيل الروضة التجاري في القاهرة (1985 - 1987)"></p>
+            <p data-en="Hotel & Restaurants Management from College of English Education and Management Training (1993)" 
+               data-ar="إدارة الفنادق والمطاعم من كلية التعليم الإنجليزي والتدريب الإداري (1993)"></p>
+            <!-- Add more education details similarly -->
+        </section>
+
+        <section id="experience">
+    <h2>Work Experience</h2>
+
+    <div class="experience-item">
+        <img src="texas.png" alt="Texas Roadhouse Logo">
+        <div>
+            <h3 data-en="General Restaurant Manager at Alshaya International Co. (20/10/2019 - 6/3/2024)" 
+                data-ar="مدير عام مطعم في شركة الشايع الدولية (20/10/2019 - 6/3/2024)"></h3>
+            <ul>
+                <li data-en="Handling more than 60 Employees & Managers" 
+                    data-ar="إدارة أكثر من 60 موظفًا ومديرًا"></li>
+                <li data-en="Controls day-to-day operations by scheduling, ordering, and developing the restaurant team members." 
+                    data-ar="يسيطر على العمليات اليومية من خلال جدولة الطلبات وتطوير أعضاء فريق المطعم."></li>
+                <li data-en="Controls profit & loss, by following cash control/security procedures, maintaining inventory, managing labor, reviewing financial reports, and taking appropriate actions." 
+                    data-ar="يسيطر على الربح والخسارة من خلال اتباع إجراءات التحكم في النقد / الأمان، والحفاظ على المخزون، وإدارة العمالة، ومراجعة التقارير المالية، واتخاذ الإجراءات المناسبة."></li>
+                <li data-en="Recruits, interviews, and hires team members, conducts performance appraisals, takes disciplinary action, motivates and trains." 
+                    data-ar="يجند، ويجري المقابلات، ويقوم بتوظيف أعضاء الفريق، ويقوم بتقييم الأداء، ويتخذ إجراءات تأديبية، ويحفز ويدرب."></li>
+                <li data-en="Has authority to hire and terminate (or participate in those decisions) with approval/partnership from Human Resources." 
+                    data-ar="لديه السلطة لتوظيف وإنهاء (أو المشاركة في تلك القرارات) بموافقة / شراكة من الموارد البشرية."></li>
+                <li data-en="Ensures that the Occupational Safety and Health Act, local health and safety codes, as well as the company safety and security policies are being adhered to." 
+                    data-ar="يضمن الالتزام بقانون السلامة والصحة المهنية، ومواثيق الصحة والسلامة المحلية، وكذلك سياسات السلامة والأمان للشركة."></li>
+                <li data-en="Ensures that the restaurant is in compliance with the preventative maintenance program with regards to facility, equipment, and grounds maintenance." 
+                    data-ar="يضمن التزام المطعم ببرنامج الصيانة الوقائية فيما يتعلق بالصيانة المرافق والمعدات والأراضي."></li>
+                <li data-en="Ensures a safe working and customer experience environment by facilitating safe work behaviors of the team." 
+                    data-ar="يضمن بيئة عمل وتجربة عملاء آمنة من خلال تسهيل سلوكيات العمل الآمنة للفريق."></li>
+                <li data-en="Maintains fast, accurate service, positive guest relations, and ensures products are consistent with company quality standards." 
+                    data-ar="يحافظ على الخدمة السريعة والدقيقة، وعلاقات الضيوف الإيجابية، ويضمن أن تكون المنتجات متوافقة مع معايير الجودة للشركة."></li>
+                <li data-en="Ensures food quality and 100% customer satisfaction." 
+                    data-ar="يضمن جودة الطعام ورضا العملاء بنسبة 100%."></li>
+                <li data-en="Ensures complete and timely execution of corporate & local marketing programs." 
+                    data-ar="يضمن التنفيذ الكامل وفي الوقت المناسب لبرامج التسويق للشركة والمحلية."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="logo.png" alt="Restaurant & Catering Co. Logo">
+        <div>
+            <h3 data-en="Operation Manager at Restaurant & Catering Co. (26/03/2018 - 1/9/2019)" 
+                data-ar="مدير تشغيل في شركة الامتداد و تموين (26/03/2018 - 1/9/2019)"></h3>
+            <ul>
+                <li data-en="Supervise all restaurant activities and ensure compliance to all company standards to increase all sales of labor costs and prepare various reports accurately and within timeframe." 
+                    data-ar="الإشراف على جميع أنشطة المطعم وضمان الامتثال لجميع معايير الشركة لزيادة جميع مبيعات تكاليف العمالة وإعداد التقارير المختلفة بدقة وضمن الإطار الزمني."></li>
+                <li data-en="Maintain optimal level of sanitary procedures for all food handling and maintain neat and clean kitchen area and ensure optimal quality of all food preparation and ensure compliance to all standards." 
+                    data-ar="الحفاظ على مستوى مثالي من إجراءات النظافة لجميع مناولات الطعام والحفاظ على منطقة المطبخ نظيفة ومرتبة وضمان الجودة المثلى لجميع تحضيرات الطعام وضمان الامتثال لجميع المعايير."></li>
+                <li data-en="Administer performance of all service staff and schedule and evaluate all restaurant operations and provide training to all employees and maintain all work according to required policies and procedures and maintain knowledge of all food and beverage trends." 
+                    data-ar="إدارة أداء جميع الموظفين الجدولين وتقييم جميع عمليات المطعم وتقديم التدريب لجميع الموظفين والحفاظ على جميع الأعمال وفقًا للسياسات والإجراءات المطلوبة والحفاظ على معرفة جميع اتجاهات الأطعمة والمشروبات."></li>
+                <li data-en="Prepare estimates of all food and beverage costs and coordinate with corporate staff and assist to purchase all required supplies and place required orders for all distributors and ensure response to all complaints." 
+                    data-ar="إعداد تقديرات لجميع تكاليف الطعام والشراب وتنسيق مع الموظفين الإداريين والمساعدة في شراء جميع الإمدادات المطلوبة ووضع الطلبات المطلوبة لجميع الموزعين وضمان الرد على جميع الشكاوى."></li>
+                <li data-en="Ensure compliance to all security procedures and design strategies to protect all employees and customers and design strategies to reduce injuries to staff and prepare various accident reports." 
+                    data-ar="ضمان الامتثال لجميع إجراءات الأمن وتصميم استراتيجيات لحماية جميع الموظفين والعملاء وتصميم استراتيجيات لتقليل الإصابات بين الموظفين وإعداد تقارير الحوادث المختلفة."></li>
+                <li data-en="Manage all shifts for restaurant operations and schedule all processes and maintain cleanliness at all times and assist to resolve all complaints and maintain food quality at all times and perform regular interviews with all employees." 
+                    data-ar="إدارة جميع المناوبات لعمليات المطعم وجدولة جميع العمليات والحفاظ على النظافة في جميع الأوقات والمساعدة في حل جميع الشكاوى والحفاظ على جودة الطعام في جميع الأوقات وإجراء مقابلات منتظمة مع جميع الموظفين."></li>
+                <li data-en="Perform orientation and provide training to all new employees on restaurant processes and determine appropriate feedback from employees and maintain all restaurant plans." 
+                    data-ar="تنفيذ التوجيه وتقديم التدريب لجميع الموظفين الجدد على عمليات المطعم وتحديد التغذية الراجعة المناسبة من الموظفين والحفاظ على جميع خطط المطعم."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="gadwa.png" alt="Gadwa Ashwa Co. Logo">
+        <div>
+            <h3 data-en="Operations Manager at Gadwa Ashwa Co. (1/1/2017 - 31/12/2017)" 
+                data-ar="مدير تشغيل في شركة غدوه عشوا (1/1/2017 - 31/12/2017)"></h3>
+            <ul>
+                <li data-en="Hires, schedules, supervises, trains and coordinates all the work." 
+                    data-ar="يوظف، يحدد الجداول الزمنية، يشرف، يدرب وينسق جميع الأعمال."></li>
+                <li data-en="Ensures controls are in place to inventory controls." 
+                    data-ar="يضمن وجود الضوابط للتحكم في المخزون."></li>
+                <li data-en="Manages finances such as budget, payroll, and purchasing." 
+                    data-ar="يدير الأمور المالية مثل الميزانية، الرواتب، والمشتريات."></li>
+                <li data-en="Develops initiatives to build sales, profitability, and guest counts." 
+                    data-ar="يطور المبادرات لزيادة المبيعات، الربحية، وعدد الضيوف."></li>
+                <li data-en="Manages F&B budgets and costs." 
+                    data-ar="يدير ميزانيات وتكاليف الأطعمة والمشروبات."></li>
+                <li data-en="Develops operational procedures for unit." 
+                    data-ar="يطور الإجراءات التشغيلية للوحدة."></li>
+                <li data-en="Maintains and implements standards of quality in all food and beverage service operations." 
+                    data-ar="يحافظ على معايير الجودة وينفذها في جميع عمليات خدمة الأطعمة والمشروبات."></li>
+                <li data-en="Carries out supervisory responsibility following policies and procedures." 
+                    data-ar="ينفذ المسؤوليات الإشرافية وفقًا للسياسات والإجراءات."></li>
+                <li data-en="Adheres to all Health regulations." 
+                    data-ar="يلتزم بجميع اللوائح الصحية."></li>
+                <li data-en="Ensures that the restaurant operates efficiently and effectively within the operational guidelines." 
+                    data-ar="يضمن أن يعمل المطعم بكفاءة وفعالية ضمن الإرشادات التشغيلية."></li>
+                <li data-en="Ensures all safety and security systems and procedures are followed to ensure health and safety of employees and guests." 
+                    data-ar="يضمن اتباع جميع أنظمة وإجراءات السلامة والأمان لضمان صحة وسلامة الموظفين والضيوف."></li>
+                <li data-en="Ensures established standards of food safety and sanitation are maintained." 
+                    data-ar="يضمن الحفاظ على معايير السلامة الغذائية والنظافة."></li>
+                <li data-en="Oversees correct receipt, storage, and handling of food and beverage products to ensure quality and freshness at all times." 
+                    data-ar="يشرف على استلام وتخزين ومعالجة المنتجات الغذائية والمشروبات بشكل صحيح لضمان الجودة والانتعاش في جميع الأوقات."></li>
+                <li data-en="Performs other duties as assigned." 
+                    data-ar="يقوم بمهام أخرى كما تم تعيينها."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+    <img src="safari.png" alt="Safari Group Logo">
+    <div>
+        <h3 data-en="Asst. Purchasing Manager at Safari Group (1/5/2013 - 31/12/2016)" 
+            data-ar="مساعد مدير المشتريات في مجموعة سفاري (1/5/2013 - 31/12/2016)"></h3>
+        <ul>
+            <li data-en="Getting goods and services for the best price and value." 
+                data-ar="الحصول على السلع والخدمات بأفضل سعر وقيمة."></li>
+            <li data-en="Cutting any waste and unnecessary costs to create a streamlined process and fast production times." 
+                data-ar="تقليل النفقات والمواد المهدرة بما يساعد في تجهيز العمليات بشكل أسرع."></li>
+            <li data-en="Working with suppliers to ensure that key processes are running efficiently and cost-effectively." 
+                data-ar="العمل مع الموردين لضمان تشغيل العمليات الرئيسية بكفاءة وفعالية من حيث التكلفة."></li>
+            <li data-en="Building strong working relationships both internally and with key suppliers." 
+                data-ar="بناء علاقات عمل قوية داخليًا ومع الموردين الرئيسيين."></li>
+            <li data-en="Contract management and negotiation." 
+                data-ar="إدارة العقود والتفاوض."></li>
+            <li data-en="Understanding and keeping up with new trends and regulations in the business." 
+                data-ar="فهم ومواكبة الاتجاهات واللوائح الجديدة في مجال الأعمال."></li>
+            <li data-en="Dealing with international suppliers." 
+                data-ar="التعامل مع الموردين الدوليين."></li>
+            <li data-en="Understanding technology and managing online systems such as e-auctions and e-tendering." 
+                data-ar="فهم التكنولوجيا وإدارة الأنظمة عبر الإنترنت مثل المزادات الإلكترونية والمناقصات الإلكترونية."></li>
+        </ul>
+    </div>
+</div>
+
+
+    <div class="experience-item">
+        <img src="chico.jfif" alt="EL Chico K.S.A Logo">
+        <div>
+            <h3 data-en="General Restaurant Manager at EL Chico K.S.A (27/1/2011 - 30/4/2013)" 
+                data-ar="مدير عام مطعم في EL Chico K.S.A (27/1/2011 - 30/4/2013)"></h3>
+            <ul>
+                <li data-en="Sharing and putting all sales targets according to company structure." 
+                    data-ar="مشاركة ووضع جميع أهداف المبيعات وفقًا لهيكل الشركة."></li>
+                <li data-en="Strong ability to build and systematic all new brands requirements in the new countries." 
+                    data-ar="قدرة قوية على بناء وتنظيم جميع متطلبات العلامات التجارية الجديدة في البلدان الجديدة."></li>
+                <li data-en="Leading a team of 84 persons, including Managers, Supervisors, Trainers, B.O.H, and F.O.H." 
+                    data-ar="قيادة فريق من 84 شخصًا، بما في ذلك المديرين، المشرفين، المدربين، الخلفية الأمامية."></li>
+                <li data-en="Holding a certified Training Store." 
+                    data-ar="الاحتفاظ بمخزن تدريب معتمد."></li>
+                <li data-en="Responsible for company's new managers training and evaluations." 
+                    data-ar="مسؤول عن تدريب وتقييم المديرين الجدد في الشركة."></li>
+                <li data-en="Responsible for Guest Relation, suggestions, and complaints." 
+                    data-ar="مسؤول عن علاقات الضيوف والاقتراحات والشكاوى."></li>
+                <li data-en="Responsible for communication between home office and restaurant." 
+                    data-ar="مسؤول عن التواصل بين المكتب الرئيسي والمطعم."></li>
+                <li data-en="Responsible for Store Budget, Staffing, maintenance, and P&L statement." 
+                    data-ar="مسؤول عن ميزانية المتجر، التوظيف، الصيانة، وبيان الأرباح والخسائر."></li>
+                <li data-en="Responsible for in-store training." 
+                    data-ar="مسؤول عن التدريب في المتجر."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="roma.jfif" alt="Tony Roma's K.S.A Logo">
+        <div>
+            <h3 data-en="General Restaurant Manager & Area Manager at Tony Roma's K.S.A (12/9/2006 - 31/12/2010)" 
+                data-ar="مدير عام مطعم ومدير منطقة في Tony Roma's K.S.A (12/9/2006 - 31/12/2010)"></h3>
+            <ul>
+                <li data-en="Responsible for 3 stores in the Eastern Region." 
+                    data-ar="مسؤول عن 3 متاجر في المنطقة الشرقية."></li>
+                <li data-en="Leading a team of 84 persons, including Managers, Supervisors, Trainers, B.O.H, and F.O.H." 
+                    data-ar="قيادة فريق من 84 شخصًا، بما في ذلك المديرين، المشرفين، المدربين، الخلفية الأمامية."></li>
+                <li data-en="Holding a certified Training Store." 
+                    data-ar="الاحتفاظ بمخزن تدريب معتمد."></li>
+                <li data-en="Responsible for company's new managers training and evaluations." 
+                    data-ar="مسؤول عن تدريب وتقييم المديرين الجدد في الشركة."></li>
+                <li data-en="Responsible for Guest Relation, suggestions, and complaints." 
+                    data-ar="مسؤول عن علاقات الضيوف والاقتراحات والشكاوى."></li>
+                <li data-en="Responsible for communication between home office and restaurant." 
+                    data-ar="مسؤول عن التواصل بين المكتب الرئيسي والمطعم."></li>
+                <li data-en="Responsible for Store Budget, Staffing, maintenance, and P&L statement." 
+                    data-ar="مسؤول عن ميزانية المتجر، التوظيف، الصيانة، وبيان الأرباح والخسائر."></li>
+                <li data-en="Responsible for in-store training." 
+                    data-ar="مسؤول عن التدريب في المتجر."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="badr.jfif" alt="Albader Enterprise K.S.A Logo">
+        <div>
+            <h3 data-en="Kitchens Manager at Albader Enterprise K.S.A (1/3/2006 - 12/9/2006)" 
+                data-ar="مدير المطابخ في Albader Enterprise K.S.A (1/3/2006 - 12/9/2006)"></h3>
+            <ul>
+                <li data-en="Ensure that all food and products are consistently prepared and served according to the restaurant's recipe, portioning, cooking, and serving standard." 
+                    data-ar="تأكد من أن جميع الأطعمة والمنتجات يتم إعدادها وتقديمها باستمرار وفقًا لوصفة المطعم والمعايير الخاصة بالتجزئة والطهي والتقديم."></li>
+                <li data-en="Make employment and termination decisions including interviewing, hiring, evaluating, and disciplining kitchen personnel as appropriate." 
+                    data-ar="اتخاذ قرارات التوظيف والفصل بما في ذلك إجراء المقابلات والتوظيف وتقييم وتوجيه موظفي المطبخ حسب الضرورة."></li>
+                <li data-en="Provide orientation of company and department rules, policies, and procedures and oversee training of new kitchen employees." 
+                    data-ar="توفير التوجيه لقواعد وإجراءات الشركة والإشراف على تدريب الموظفين الجدد في المطبخ."></li>
+                <li data-en="Prepare all required paperwork, including forms, reports, and schedules in an organized and timely manner." 
+                    data-ar="إعداد جميع الأوراق المطلوبة، بما في ذلك النماذج والتقارير والجداول بطريقة منظمة وفي الوقت المناسب."></li>
+                <li data-en="Work with restaurant managers to plan and price menu items. Establish portion sizes and prepare standard recipe cards for all new menu items." 
+                    data-ar="العمل مع مديري المطعم لتخطيط وتحديد أسعار عناصر القائمة. تحديد حجم الحصص وإعداد بطاقات الوصفات القياسية لجميع عناصر القائمة الجديدة."></li>
+                <li data-en="Control food cost and usage by following proper requisition of products from storage area, product storage procedures, standard recipes, and waste control procedures." 
+                    data-ar="التحكم في تكلفة واستخدام الطعام من خلال متابعة طلب المنتجات بشكل صحيح من منطقة التخزين وإجراءات تخزين المنتجات والوصفات القياسية وإجراءات التحكم في النفايات."></li>
+                <li data-en="Responsible for training kitchen personnel in cleanliness, sanitation, and safety." 
+                    data-ar="مسؤول عن تدريب موظفي المطبخ على النظافة والتعقيم والسلامة."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="2.jpg" alt="2 in 1 Company Logo">
+        <div>
+            <h3 data-en="Kitchens Manager & Quality Assurance Auditor at 2 in 1 Company (1/7/2004 - 31/12/2005)" 
+                data-ar="مدير المطابخ ومدقق ضمان الجودة في شركة 2 في 1 (1/7/2004 - 31/12/2005)"></h3>
+            <ul>
+                <li data-en="Supervising all Kitchen activities like inventories, daily, weekly, staff scheduling, training materials, etc." 
+                    data-ar="الإشراف على جميع أنشطة المطبخ مثل الجرد، اليومي، الأسبوعي، جدولة الموظفين، مواد التدريب، إلخ."></li>
+                <li data-en="Maintaining high standards of quality products, reliability, and safety." 
+                    data-ar="الحفاظ على معايير عالية من جودة المنتجات والموثوقية والسلامة."></li>
+                <li data-en="Assisting the executive chef in implementing all new menu items, training kitchen staff, testing and adjusting food items." 
+                    data-ar="مساعدة الشيف التنفيذي في تنفيذ جميع عناصر القائمة الجديدة، تدريب موظفي المطبخ، اختبار وتعديل العناصر الغذائية."></li>
+                <li data-en="Responsible for other tasks assigned to various concepts within the company." 
+                    data-ar="مسؤول عن المهام الأخرى الموكلة إلى المفاهيم المختلفة داخل الشركة."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="chi.jpg" alt="Chili's Restaurants Logo">
+        <div>
+            <h3 data-en="Kitchen Manager – Duty Manager at Chili's Restaurants (05/2001-06/2004)" 
+                data-ar="مدير مطبخ – مدير مناوب في مطاعم تشيليز (05/2001-06/2004)"></h3>
+            <ul>
+                <li data-en="Responsible for labor planning & development of all staff inside the kitchen." 
+                    data-ar="مسؤول عن تخطيط وتطوير العمالة لجميع الموظفين داخل المطبخ."></li>
+                <li data-en="Taking care of training and reporting to GM & training manager." 
+                    data-ar="الاهتمام بالتدريب والتقرير إلى المدير العام ومدير التدريب."></li>
+                <li data-en="Achieving the normal food cost percentage every month according to company policies." 
+                    data-ar="تحقيق نسبة تكلفة الطعام العادية كل شهر وفقًا لسياسات الشركة."></li>
+                <li data-en="Responsible for the training of new managers during the opening of new stores." 
+                    data-ar="مسؤول عن تدريب المديرين الجدد أثناء فتح المتاجر الجديدة."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="metro.png" alt="Metro Markets Logo">
+        <div>
+            <h3 data-en="Fresh Food Manager at Metro Markets (12/2000-04/2001)" 
+                data-ar="مدير الأغذية الطازجة في Metro Markets (12/2000-04/2001)"></h3>
+            <ul>
+                <li data-en="Responsible for all departments inside the section (Vegetables & Fruits, Meats, Seafood, Dairy Bakery, Hot section)." 
+                    data-ar="مسؤول عن جميع الأقسام داخل القسم (الخضار والفواكه، اللحوم، المأكولات البحرية، مخبز الألبان، القسم الساخن)."></li>
+                <li data-en="Reporting to GM & discussing all sales targets & depreciation." 
+                    data-ar="التقرير إلى المدير العام ومناقشة جميع أهداف المبيعات والاستهلاك."></li>
+                <li data-en="Working inside the customer's environment and taking care of guest complaints, special requests, and creating a good guest experience." 
+                    data-ar="العمل داخل بيئة العميل والاعتناء بشكاوى الضيوف والطلبات الخاصة وخلق تجربة جيدة للضيوف."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="ch.png" alt="Chili's Restaurants Logo">
+        <div>
+            <h3 data-en="Kitchen Manager – Corporate Trainer at Chili's Restaurants (7/1994 – 11/2000)" 
+                data-ar="مدير مطبخ – مدرب في مطاعم تشيليز (7/1994 – 11/2000)"></h3>
+            <ul>
+                <li data-en="Responsible for opening 7 Chili’s stores." 
+                    data-ar="مسؤول عن افتتاح 7 متاجر تشيليز."></li>
+                <li data-en="Taking care of labor planning and development of all staff inside the kitchen." 
+                    data-ar="الاهتمام بتخطيط وتطوير العمالة لجميع الموظفين داخل المطبخ."></li>
+                <li data-en="Responsible for the training of new managers." 
+                    data-ar="مسؤول عن تدريب المديرين الجدد."></li>
+                <li data-en="Achieving the normal food cost percentage every month according to company policies." 
+                    data-ar="تحقيق نسبة تكلفة الطعام العادية كل شهر وفقًا لسياسات الشركة."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="nan1.png" alt="Naniwa Restaurants Logo">
+        <div>
+            <h3 data-en="Supervisor at Naniwa Restaurants (12/1993 – 6/1994)" 
+                data-ar="مشرف في مطاعم نانيو (12/1993 – 6/1994)"></h3>
+            <ul>
+                <li data-en="Supervising F&B control and staff evaluations." 
+                    data-ar="الإشراف على مراقبة الأطعمة والمشروبات وتقييمات الموظفين."></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="experience-item">
+        <img src="rayan.jfif" alt="Rayan Restaurants Logo">
+        <div>
+            <h3 data-en="Cook at Rayan Restaurants (1990 – 1992)" 
+                data-ar="طاهٍ في مطاعم ريان (1990 – 1992)"></h3>
+        </div>
+    </div>
+</div> 
+    <!-- Add more experiences as needed -->
+
+</section>
+
+
+        <section id="interests" class="cool-section">
+    <h2>Interests</h2>
+    <div class="interests-list">
+        <div class="interest-item">
+            <i class="fas fa-book"></i> <!-- Icon for Reading -->
+            <p data-en="Reading" data-ar="القراءة"></p>
+        </div>
+        <div class="interest-item">
+            <i class="fas fa-futbol"></i> <!-- Icon for Football -->
+            <p data-en="Football" data-ar="كرة القدم"></p>
+        </div>
+    </div>
+</section>
+
+<section id="references" class="cool-section">
+    <h2>References</h2>
+    <p data-en="A list of references is available on request." 
+       data-ar="قائمة المراجع متاحة عند الطلب."></p>
+</section>
+
+
+   <footer>
+    <p>Email: <a href="mailto:tahasaif21000@yahoo.com">tahasaif21000@yahoo.com</a></p>
+</footer>
+
+
+   <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script>
+        function switchLanguage(lang) {
+            const elements = document.querySelectorAll('[data-en], [data-ar]');
+            elements.forEach(el => {
+                el.innerHTML = el.getAttribute(`data-${lang}`);
+            });
+        }
+    </script>
+<script>
+            // Switch Language Function
+            function switchLanguage(lang) {
+                const elements = document.querySelectorAll('[data-en], [data-ar]');
+                elements.forEach(element => {
+                    element.textContent = element.getAttribute(`data-${lang}`);
+                });
+                localStorage.setItem('language', lang);
+            }
+
+            // Load Default Language
+            document.addEventListener('DOMContentLoaded', () => {
+                const defaultLang = localStorage.getItem('language') || 'ar';
+                switchLanguage(defaultLang);
+            });
+        </script>
+</body>
+</html>
